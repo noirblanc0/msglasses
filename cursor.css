@@ -12,7 +12,7 @@
    =============================== */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  
 }
 
 /* ===============================
@@ -80,7 +80,8 @@ body {
 .chapter-thumbnails {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+    width: 100%;
+  overflow-x: hidden;
   margin: 30px 0 50px;
   gap: 10px;
 }
@@ -158,26 +159,36 @@ body {
   .chapter-header p {
     font-size: 18px;
   }
+  .chapter-thumbnails {
+    justify-content: center;
+    gap: 12px;
+  }
 
+  /* Hide edge thumbnails on mobile */
+  .chapter-thumbnails .edge,
+  .chapter-thumbnails .small {
+    display: none;
+  }
+
+  /* Center main image */
+  .chapter-thumbnails .main {
+    width: 85vw;
+    margin: 0 auto;
+  }
   .scroll-top {
     width: 64px;
     height: 64px;
     font-size: 30px;
   }
 
-  .edge {
-    width: 22vw;
-    height: 160px;
-  }
-
+  .edge,
   .small {
-    width: 14vw;
-    height: 140px;
+    display: none;
   }
 
   .main {
-    width: 70vw;
-    height: 200px;
+    width: 85vw;
+    margin: 0 auto;
   }
 }
 
