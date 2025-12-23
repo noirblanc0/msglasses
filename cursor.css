@@ -1,10 +1,8 @@
-/* Hide cursor ONLY on devices with a mouse */
-@media (pointer: fine) {
-  * {
-    cursor: none;
-  }
+/* Hide default cursor everywhere */
+* {
+  cursor: none;
+  
 }
-
 
 /* Page styling (not related to cursor) */
 body {
@@ -106,13 +104,7 @@ button {
 /* Main (clickable) thumbnail */
 .chapter-thumbnails .main {
   /* remove transform scale on hover here */
-  /* Hide cursor ONLY on devices with a mouse */
-@media (pointer: fine) {
-  * {
-    cursor: none;
-  }
-}
-
+  cursor: none; /* keep pointer to show hover state */
 }
 
 /* Hover effect on main thumbnail */
@@ -133,13 +125,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Hide cursor ONLY on devices with a mouse */
-@media (pointer: fine) {
-  * {
-    cursor: none;
-  }
-}
-
+   cursor: none; /* hide default pointer */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   opacity: 0;               /* hidden initially */
   pointer-events: none;      /* prevent clicks when hidden */
@@ -155,54 +141,4 @@ button {
   background: #ff0000;
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(255,255,255,0.4);
-}
-/* =========================
-   Mobile adjustments
-   ========================= */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 18px; /* base readable size */
-  }
-
-  .chapter-header h1 {
-    font-size: 34px;
-  }
-
-  .chapter-header p {
-    font-size: 18px;
-  }
-
-  .scroll-top {
-    width: 64px;
-    height: 64px;
-    font-size: 30px;
-    bottom: 24px;
-    right: 24px;
-  }
-
-  .chapter-thumbnails {
-    gap: 6px;
-  }
-
-  .chapter-thumbnails .edge {
-    width: 22vw;
-    height: 160px;
-  }
-
-  .chapter-thumbnails .small {
-    width: 14vw;
-    height: 140px;
-  }
-
-  .chapter-thumbnails .main {
-    width: 70vw;
-    height: 200px;
-  }
-}
-/* Hide custom cursor on touch devices */
-@media (pointer: coarse) {
-  .cursor {
-    display: none;
-  }
 }
