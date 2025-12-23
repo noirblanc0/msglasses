@@ -1,8 +1,4 @@
-/* ===============================
-   Custom cursor (desktop only)
-   =============================== */
 if (window.matchMedia("(pointer: fine)").matches) {
-
   const cursor = document.querySelector(".cursor");
 
   document.addEventListener("mousemove", (e) => {
@@ -11,39 +7,11 @@ if (window.matchMedia("(pointer: fine)").matches) {
   });
 
   const mainThumb = document.querySelector(".main");
-  const scrollTop = document.querySelector(".scroll-top");
+  const scrollTopBtn = document.querySelector(".scroll-top");
 
-  mainThumb.addEventListener("mouseenter", () => {
-    cursor.classList.add("active");
-  });
+  mainThumb.addEventListener("mouseenter", () => cursor.classList.add("active"));
+  mainThumb.addEventListener("mouseleave", () => cursor.classList.remove("active"));
 
-  mainThumb.addEventListener("mouseleave", () => {
-    cursor.classList.remove("active");
-  });
-
-  scrollTop.addEventListener("mouseenter", () => {
-    cursor.classList.add("active");
-  });
-
-  scrollTop.addEventListener("mouseleave", () => {
-    cursor.classList.remove("active");
-  });
+  scrollTopBtn.addEventListener("mouseenter", () => cursor.classList.add("active"));
+  scrollTopBtn.addEventListener("mouseleave", () => cursor.classList.remove("active"));
 }
-
-/* ===============================
-   Scroll to top button
-   =============================== */
-const scrollTop = document.querySelector(".scroll-top");
-
-window.addEventListener("scroll", () => {
-  scrollTop.classList.toggle("show", window.scrollY > 50);
-});
-
-scrollTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-/* Thumbnail click */
-document.querySelector(".main").addEventListener("click", () => {
-  window.location.href = "christmas.html";
-});

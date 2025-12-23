@@ -6,7 +6,10 @@
     cursor: none;
   }
 }
-
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 /* ===============================
    Base page styles
    =============================== */
@@ -133,7 +136,7 @@ body {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
   z-index: 1000;
 }
 
@@ -153,19 +156,31 @@ body {
 @media (max-width: 768px) {
 
   body {
-    font-size: 38px;
+    font-size: 18px;
   }
 
   .chapter-header h1 {
-    font-size: 38px;
+    font-size: 32px;
   }
 
   .chapter-header p {
-    font-size: 32px;
+    font-size: 20px;
   }
   .chapter-thumbnails {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    padding: 0 12px;
+  }
+
+  .thumb {
+    width: 100%;
+    height: auto;
+  }
+
+  .main {
+    grid-column: 1 / -1;
+    height: 220px;
   }
 
   /* Hide edge thumbnails on mobile */
@@ -183,11 +198,6 @@ body {
     width: 64px;
     height: 64px;
     font-size: 30px;
-  }
-
-  .edge,
-  .small {
-    display: none;
   }
 
   .main {
