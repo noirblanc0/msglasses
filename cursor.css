@@ -1,12 +1,12 @@
 /* Hide default cursor everywhere */
 * {
   cursor: none;
+  
 }
 
 /* Page styling (not related to cursor) */
 body {
   font-family: Arial, sans-serif;
-  padding: 50px;
 }
 
 /* Custom cursor */
@@ -30,8 +30,85 @@ body {
   height: 40px;
   border-color: red;
 }
+/* Header */
+.chapter-header {
+  text-align: center;
+  padding: 20px 10px;
+    margin-bottom: 20px;
+}
 
+.chapter-header h1 {
+  font-size: 28px;
+}
+
+.chapter-header p {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* Main chapter container */
+.chapter-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Manhwa images */
+.chapter-container img {
+  width: 100%;
+  display: block;
+}
+
+/* Navigation */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
 button {
   padding: 10px 20px;
   font-size: 16px;
+}
+.chapter-thumbnails {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;  
+  margin: 30px auto;
+  margin-bottom: 50px;
+  padding: 0; /* edge images touch sides */
+  gap: 10px;    /* small spacing between images */
+}
+
+.chapter-thumbnails .thumb {
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Edge images touch sides */
+.chapter-thumbnails .edge,
+.chapter-thumbnails .main {
+  height: 200px; /* or any fixed value you like */
+  object-fit: cover; /* ensures image fills box without distortion */
+}
+.chapter-thumbnails .edge {
+  width: 15vw;  /* adjusts with viewport */
+}
+
+.chapter-thumbnails .small {
+  width: 8vw;
+}
+
+.chapter-thumbnails .main {
+  width: 400px;
+}
+/* Main (clickable) thumbnail */
+.chapter-thumbnails .main {
+  /* remove transform scale on hover here */
+  cursor: pointer; /* keep pointer to show hover state */
+}
+
+/* Hover effect on main thumbnail */
+.chapter-thumbnails .main:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255,255,255,0.5);
 }

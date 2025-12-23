@@ -6,13 +6,18 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.top = e.clientY + "px";
 });
 
-// Hover effect
-document.querySelectorAll("button").forEach(button => {
-  button.addEventListener("mouseenter", () => {
-    cursor.classList.add("active");
-  });
+// Hover effect for the main thumbnail
+const mainThumb = document.querySelector(".chapter-thumbnails .main");
 
-  button.addEventListener("mouseleave", () => {
-    cursor.classList.remove("active");
-  });
+mainThumb.addEventListener("mouseenter", () => {
+  cursor.classList.add("active");
+});
+
+mainThumb.addEventListener("mouseleave", () => {
+  cursor.classList.remove("active");
+});
+
+// Optional: click action
+mainThumb.addEventListener("click", () => {
+  alert("Main thumbnail clicked! You can navigate to the next chapter here.");
 });
