@@ -15,7 +15,7 @@ scrollTopBtn.addEventListener("click", () => {
    Thumbnail click
    =============================== */
 document.querySelector(".main").addEventListener("click", () => {
-  window.location.href = "christmas.html";
+  window.location.href = "cards.html";
 });
 
 /* ===============================
